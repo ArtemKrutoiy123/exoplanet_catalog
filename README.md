@@ -47,6 +47,25 @@
 - Кастомный CSS для метрик, полей ввода, кнопок и уведомлений
 - Нативное управление состоянием и маршрутизация Streamlit
 
+## Скриншоты приложения
+Главное меню с карточками:
+
+<img width="1354" height="541" alt="main_menu" src="https://github.com/user-attachments/assets/22418046-33d1-4ef6-b504-fbee0ad71664" />
+
+Карточка планеты:
+
+<img width="1322" height="622" alt="planet_card" src="https://github.com/user-attachments/assets/671560f4-2027-44d6-ba18-b7a47651e8a2" />
+
+Возможность генерации картинок:
+
+<img width="639" height="790" alt="planet_generation_start" src="https://github.com/user-attachments/assets/e65b6668-d57a-49c8-9da0-c200557f0323" />
+
+Результат генерации:
+
+<img width="539" height="788" alt="planet_generation_end" src="https://github.com/user-attachments/assets/b3663c74-b933-46de-b033-b92f5b93c295" />
+
+
+
 ---
 
 ## Стек технологий

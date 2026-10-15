@@ -1,0 +1,445 @@
+:root {
+  --bg-deep: #0b0f1a;
+  --bg-surface: #151b2b;
+  --bg-card: #1e293b;
+  --bg-input: #0f172a;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --accent: #0ea5e9;
+  --accent-hover: #38bdf8;
+  --accent-glow: rgba(14, 165, 233, 0.25);
+  --border-subtle: rgba(148, 163, 184, 0.15);
+  --radius: 10px;
+  --transition: 0.2s ease;
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'Fira Code', monospace;
+}
+
+.stApp {
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+}
+
+.stApp::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.06) 0%, transparent 60%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-primary) !important;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.stMarkdown p,
+label,
+.stCaption,
+.stTooltipIcon {
+  color: var(--text-secondary) !important;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.stTextInput > div > div > input,
+.stSelectbox > div > div > select,
+.stNumberInput > div > div > input {
+  background: var(--bg-input) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: var(--radius) !important;
+  color: var(--text-primary) !important;
+  padding: 0.6rem 0.9rem !important;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.stTextInput > div > div > input:focus,
+.stSelectbox > div > div > select:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px var(--accent-glow) !important;
+  outline: none !important;
+}
+
+.stButton > button {
+  background: var(--bg-surface) !important;
+  border: 1px solid var(--border-subtle) !important;
+  color: var(--text-primary) !important;
+  border-radius: var(--radius) !important;
+  padding: 0.55rem 1.2rem !important;
+  font-weight: 500 !important;
+  transition: all var(--transition);
+}
+
+.stButton > button:hover {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.stButton > button:active {
+  transform: scale(0.98) !important;
+}
+
+div[data-testid="stMetric"] {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-left: 3px solid var(--accent) !important;
+  border-radius: 0 var(--radius) var(--radius) 0 !important;
+  padding: 0.4rem 0.6rem !important;
+}
+
+div[data-testid="stMetricLabel"] p {
+  color: var(--text-secondary) !important;
+  font-size: 0.7rem !important;
+  font-family: var(--font-mono) !important;
+  letter-spacing: 0.5px;
+}
+
+div[data-testid="stMetricValue"] {
+  color: var(--text-primary) !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  margin-top: 0.2rem !important;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-left: 3px solid transparent;
+  border-radius: var(--radius);
+  padding: 1.5rem 1.2rem;
+  transition: all var(--transition);
+  position: relative;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-hover);
+  border-left-color: var(--accent);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.planet-visual {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  background: radial-gradient(circle at 30% 30%, #7dd3fc, #0ea5e9 50%, #1e3a8a 100%);
+  box-shadow: 0 0 15px rgba(14, 165, 233, 0.3);
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 0.3rem;
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.card-type {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent);
+  background: rgba(14, 165, 233, 0.1);
+  padding: 4px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 0.9rem;
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  text-align: center;
+}
+
+section[data-testid="stSidebar"] {
+  background: var(--bg-surface) !important;
+  border-right: 1px solid var(--border-subtle) !important;
+}
+
+section[data-testid="stSidebar"] .stMarkdown,
+section[data-testid="stSidebar"] label {
+  color: var(--text-secondary) !important;
+}
+
+section[data-testid="stSidebar"] h1,
+section[data-testid="stSidebar"] h2,
+section[data-testid="stSidebar"] h3 {
+  color: var(--text-primary) !important;
+}
+
+.stAlert,
+.stSuccess,
+.stError,
+.stWarning {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-left: 4px solid var(--accent) !important;
+  border-radius: var(--radius) !important;
+  color: var(--text-primary) !important;
+  padding: 1rem !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 6px;
+  border: 2px solid var(--bg-deep);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+.stPageButton {
+  background: var(--bg-surface) !important;
+  border: 1px solid var(--border-subtle) !important;
+  color: var(--text-secondary) !important;
+  border-radius: var(--radius) !important;
+  transition: all var(--transition);
+}
+
+.stPageButton:hover {
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+  background: rgba(14, 165, 233, 0.08) !important;
+}
+
+.block-container {
+  padding-top: 2rem !important;
+  padding-bottom: 3rem !important;
+}
+
+.header-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  padding: 0.5rem 0;
+}
+
+.user-info {
+  text-align: right;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+}
+
+.user-info strong {
+  color: var(--accent);
+}
+
+.header-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-subtle), transparent);
+  margin: 1rem 0 2rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.image-generation-block {
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.08), rgba(30, 41, 59, 0.6));
+  border: 1px solid rgba(14, 165, 233, 0.3);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 20px rgba(14, 165, 233, 0.1);
+}
+
+.image-generation-block h4 {
+  color: var(--accent) !important;
+  margin-top: 0 !important;
+  margin-bottom: 1rem !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px;
+}
+
+.image-generation-block img {
+  border-radius: var(--radius);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(14, 165, 233, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.image-generation-block img:hover {
+  transform: scale(1.02);
+}
+
+.stSpinner > div {
+  border-top-color: var(--accent) !important;
+}
+
+.streamlit-expanderHeader {
+  background: rgba(14, 165, 233, 0.05) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: var(--radius) !important;
+  color: var(--text-secondary) !important;
+  font-size: 0.9rem !important;
+}
+
+.streamlit-expanderHeader:hover {
+  background: rgba(14, 165, 233, 0.1) !important;
+  color: var(--accent) !important;
+}
+
+.stTextArea textarea {
+  background: var(--bg-input) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: var(--radius) !important;
+  color: var(--text-primary) !important;
+  font-family: var(--font-mono) !important;
+  font-size: 0.85rem !important;
+}
+
+.star-visual {
+  position: relative;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffffff, var(--star-color) 40%, var(--star-color-dark) 100%);
+  box-shadow:
+    0 0 20px var(--star-color),
+    0 0 40px var(--star-color),
+    0 0 60px var(--star-color-dark),
+    inset 0 0 20px rgba(255, 255, 255, 0.3);
+  animation: star-pulse 3s ease-in-out infinite;
+}
+
+.star-visual::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(circle, var(--star-color) 0%, transparent 70%);
+  opacity: 0.3;
+  border-radius: 50%;
+  animation: star-glow 3s ease-in-out infinite;
+}
+
+.star-visual::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 40%;
+  background: radial-gradient(circle, #ffffff 0%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+@keyframes star-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes star-glow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+.star-small {
+  width: 40px;
+  height: 40px;
+}
+
+.star-large {
+  width: 70px;
+  height: 70px;
+}
+
+.star-label {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  opacity: 0.7;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo img {
+  box-shadow: 0 2px 8px rgba(14, 165, 233, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.header-logo img:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.header-logo-text {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.login-logo-container {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  z-index: 100;
+}
+
+.login-logo-container img {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.4);
+}
+
+.login-logo-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--accent);
+}
